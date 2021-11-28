@@ -3,7 +3,12 @@ Previously both dispalys where available as dedicated projects, now both had ben
 At the mmoment the code is configured to drive both display type at teh same time. With minor change it can reconfigured to support two or more displays of same type.
 Im subfolder ./script befinden sich zwei Powershell Scripte um beie Displayvarianten zu anzusteuern. 
 
+![image](https://user-images.githubusercontent.com/10500682/143782855-eb4b66c5-4b3a-4abf-8ddb-56ebdcacfe10.png)
+
+
+
 The interface to iTrain is done with powershell scripts which are called from iTrain actions. 
+
 
 
 Parameters accepted by the setClockDisplay Script:
@@ -12,7 +17,9 @@ Parameters accepted by the setClockDisplay Script:
 'S' 			... increment the time by by one minute
 
 The sketch does only provide a static display, there is no realtime clock function included. 
-This is to support the time scaling function from iTrain. To get the dispaly synchronized 
+This is to support the time scaling function from iTrain. To get the display synchronized this action is recomended:
+![image](https://user-images.githubusercontent.com/10500682/143782704-4e0a0537-3001-4f7e-9f89-4edbaf517cba.png)
+
 
 
 
