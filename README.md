@@ -12,9 +12,9 @@ They can be found in the ./script subfolder.
 ***
 #### Platform Clock:
 Parameters accepted by the setClockDisplay.ps1 Script:
-'T' System   	... set the display to system time of the host computer, there MUST be a space after the 'T'
-'T' 16:31    	... set the display to to given time, in thsi case 16:31, there MUST be a space after the 'T'
-'S' 			... increment the time by by one minute
+* 'T' System   	... set the display to system time of the host computer, there MUST be a space after the 'T'
+* 'T' 16:31    	... set the display to to given time, in thsi case 16:31, there MUST be a space after the 'T'
+* 'S' 			... increment the time by by one minute
 
 The sketch does only provide a static display, there is no realtime clock function included. 
 This is to support the time scaling function from iTrain. 
@@ -24,10 +24,10 @@ To get the display synchronized with iTrain and the clock hands moving this acti
 #### Platform Display:
 Parameter accepted by the setPlatformDisplay.ps1 Script:
 The script accepts four subsequent parameters, parameters are separated by space 
-Parameter1 First line. Train name
-Parameter2 second line eg. first destination
-Parameter3 third line eg. second destination
-Parameter4 departure time
+* Parameter1 First line. Train name
+* Parameter2 second line eg. first destination
+* Parameter3 third line eg. second destination
+* Parameter4 departure time
 For german "umlauts" their representive must be used eg. "ae" instead of "ä"
 eg setPlatformDisplay1.ps1 IEC123 Muenich Salzburg 13:30
 
