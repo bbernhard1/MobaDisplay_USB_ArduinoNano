@@ -1,5 +1,5 @@
 ## This Arduino Project is to be used with iTrain Model Railroud control software. 
-### It can drive a model Platform-Clock and/or Platform-Train-Departure-Display.
+#### It can drive a model Platform-Clock and/or Platform-Train-Departure-Display.
 Previously both display where available as dedicated projects, now both had been combined in one universal code.
 The connection to the host is via USB COM port. A re implementatin of the telnet link which is known from previous project is in work.
 At the moment the code is configured to drive both display type at the same time. It is already prepared to to support two or more displays of same type. This will added at a later state.
@@ -9,7 +9,7 @@ This is how the result look like.
 The interface to iTrain is done with powershell scripts which are called from iTrain actions. 
 They can be found in the ./script subfolder.
 
-# Platform Clock:
+#### Platform Clock:
 Parameters accepted by the setClockDisplay.ps1 Script:
 'T' System   	... set the display to system time of the host computer, there MUST be a space after the 'T'
 'T' 16:31    	... set the display to to given time, in thsi case 16:31, there MUST be a space after the 'T'
@@ -20,7 +20,7 @@ This is to support the time scaling function from iTrain.
 To get the display synchronized with iTrain and the clock hands moving this action is recomended:
 ![image](https://user-images.githubusercontent.com/10500682/143782704-4e0a0537-3001-4f7e-9f89-4edbaf517cba.png)
 
-### Platform Display:
+#### Platform Display:
 Parameter accepted by the setPlatformDisplay.ps1 Script:
 The script accepts four subsequent parameters, parameters are separated by space 
 Parameter1 First line. Train name
@@ -39,7 +39,7 @@ The hardware is pretty simple. My prototype use a ARDUINO Micro, but for sure it
 The next version will use a ESP8266 NodeMCU board to support Wifi connection. The display are cheap OLED display with I2C interface. 
 Wireing is straight forward, yust connect the SCL and SDA with any digital I/O Pin and configure the code accordingly.
 
-The project is VSCode project with PlatformIO pluggin.
+### The project is VSCode project with PlatformIO pluggin.
 
 
 
