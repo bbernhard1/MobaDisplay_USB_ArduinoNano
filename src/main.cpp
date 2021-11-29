@@ -1,20 +1,17 @@
-// if "-T xx:xx" received at USBPort xx:xx is converted to analog clock image and drawn at OLED display  
-// if "-S"  received at USBPort then clock counts up by 1 minute
-// Code for ArduinoMicro, OLED is attached to I2C Interface at PIN 21,21
-
 #include <Arduino.h>
 #include <U8g2lib.h>
 #include "4x6_t_german.h"   
 #include "5x8_t_german.h"   
 #include "6x13B_t_german.h"
+#include "settings.h"
 
 // U8G2_SSD1306_128X32_UNIVISION_F_HW_I2C u8g2_b(U8G2_R2, U8X8_PIN_NONE);  //ArduinoMega with HW I2C is used (PIN21/22)
-U8G2_SSD1306_128X32_UNIVISION_F_SW_I2C trainDisplay(U8G2_R2, /* clock=*/ 3, /* data=*/ 2, /* reset=*/ U8X8_PIN_NONE);  //clock
-U8G2_SSD1306_128X32_UNIVISION_F_SW_I2C clockDisplay(U8G2_R2, /* clock=*/ 5, /* data=*/ 4, /* reset=*/ U8X8_PIN_NONE);  //platform
+U8G2_SSD1306_128X32_UNIVISION_F_SW_I2C trainDisplay(U8G2_R2, /* clock=*/ SCL1, /* data=*/ SDA1, /* reset=*/ U8X8_PIN_NONE);  //clock
+U8G2_SSD1306_128X32_UNIVISION_F_SW_I2C clockDisplay(U8G2_R2, /* clock=*/ SCL2, /* data=*/ SDA2, /* reset=*/ U8X8_PIN_NONE);  //platform
 
 
-int clockX = 16; // center the analog clock
-int clockY = 16; // center the analog clock
+const int clockX = 16; // center the analog clock
+const int clockY = 16; // center the analog clock
 
 int iHour = 10;
 int iMinute = 10;
@@ -86,7 +83,7 @@ void processTrain(String cmdString) {
   char arcLine4[6];
   sLine4.toCharArray(arcLine4, 6);
 
-// now send the stuff to the display
+// now send the data to the display
   trainDisplay.firstPage();
   do {
     // 1st row: Name of the Train
@@ -100,9 +97,9 @@ void processTrain(String cmdString) {
     trainDisplay.drawStr(0, 32, arcLine3);
     //ab
     trainDisplay.setFont(u8g2_font_4x6_t_german);
-    trainDisplay.drawStr( 100, 10, "|->");
+    trainDisplay.drawStr( 100, 10, Line5Left);
     trainDisplay.setFont(u8g2_font_5x8_t_german);
-    trainDisplay.drawStr( 110, 10, " ab");
+    trainDisplay.drawStr( 110, 10, Line5Right);
     // Time of departure
     trainDisplay.setFont(u8g2_font_5x8_t_german);
     trainDisplay.drawStr( 100, 22, arcLine4);
@@ -117,11 +114,10 @@ void setup() {
   clockDisplay.setDisplayRotation(U8G2_R1);
   processClock(10, 10);                                      // init Clock with 10:10
 
- trainDisplay.begin();
+  trainDisplay.begin();
   trainDisplay.setContrast(150);     
   trainDisplay.clearDisplay();
-  processTrain("-L1 -L2 Nicht Einsteigen -L3 -L4");      
-
+  processTrain(DefaultPlatformString);      
 
 // Init Serial  
   Serial.begin(19200);
@@ -135,9 +131,9 @@ void loop() {
   cmdString = Serial.readString(); 
   }
 
-  Serial.println("Command: " + cmdString);       // Print received command to serial monitor
   String cmdType = cmdString.substring(0, 5);    // expect either TrainX or ClockX
-  Serial.println("CommandType: " + cmdType);   
+  // Serial.println("Command: " + cmdString);       // Print received command to serial monitor
+  // Serial.println("CommandType: " + cmdType);   
  
  if (cmdType == "Clock") { 
       if (cmdString.charAt(7) == 'T') {
@@ -162,10 +158,7 @@ void loop() {
   if (cmdType == "Train") { 
      if (cmdString != "") {
       processTrain(cmdString);                     // Process the received command
-      cmdString = "";                                // Clear variable to receive next command
+      cmdString = "";                              // Clear variable to receive next command
     }
   }
- 
- delay (1000);
-
 }
