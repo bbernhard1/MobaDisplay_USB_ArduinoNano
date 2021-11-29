@@ -8,7 +8,7 @@ This is how the result look like.
 
 The interface to iTrain is done with powershell scripts which are called from iTrain actions. 
 They can be found in the ./script subfolder.
-
+***
 #### Platform Clock:
 Parameters accepted by the setClockDisplay.ps1 Script:
 'T' System   	... set the display to system time of the host computer, there MUST be a space after the 'T'
@@ -19,7 +19,7 @@ The sketch does only provide a static display, there is no realtime clock functi
 This is to support the time scaling function from iTrain. 
 To get the display synchronized with iTrain and the clock hands moving this action is recomended:
 ![image](https://user-images.githubusercontent.com/10500682/143782704-4e0a0537-3001-4f7e-9f89-4edbaf517cba.png)
-
+***
 #### Platform Display:
 Parameter accepted by the setPlatformDisplay.ps1 Script:
 The script accepts four subsequent parameters, parameters are separated by space 
@@ -34,12 +34,12 @@ Spaces within one parameter must be escaped by quotation marks.
 eg setPlatformDisplay1.ps1 IEC123 Muenich 'ueber Salzburg' 13:30
 
 ![image](https://user-images.githubusercontent.com/10500682/143779301-96a357a8-8333-43ef-9490-4cd121c700d1.png)
-
+***
 The hardware is pretty simple. My prototype use a ARDUINO Micro, but for sure it can be any other Arduino type microcontroler.
 The next version will use a ESP8266 NodeMCU board to support Wifi connection. The display are cheap OLED display with I2C interface. 
-Wireing is straight forward, yust connect the SCL and SDA with any digital I/O Pin and configure the code accordingly.
+Wireing is straight forward, yust connect the SCL and SDA with any digital I/O Pin and configure the settings.h accordingly.
 
-### The project is VSCode project with PlatformIO pluggin.
+**The project is VSCode project with PlatformIO pluggin.**
 
 
 
