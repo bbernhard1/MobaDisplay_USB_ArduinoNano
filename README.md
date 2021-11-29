@@ -5,7 +5,7 @@ The connection to the host is via USB COM port. A re implementatin of the telnet
 At the moment the code is configured to drive both display type at the same time. It is already prepared to to support two or more displays of same type. This will added at a later state.
 This is how the result look like. - Ideas for 3D printed housing are welcome - 
 
-![Xander3](https://user-images.githubusercontent.com/10500682/143892827-1b0296ef-85db-4745-9a1d-de114b041bba.jpg)
+![image](https://user-images.githubusercontent.com/10500682/143893605-ea07e078-99ee-42e3-a1db-32ad2e7b9ee5.png)
 
 The interface to iTrain is done with powershell scripts which are called from iTrain actions. 
 They can be found in the ./script subfolder.
