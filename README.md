@@ -16,14 +16,14 @@ Parameters accepted by the setClockDisplay.ps1 Script:
 * 'T' 16:31    	... set the display to to given time, in thsi case 16:31, there MUST be a space after the 'T'
 * 'S' 			... increment the time by by one minute
 
-The sketch does only provide a static display, there is no realtime clock function included. 
-This is to support the time scaling function from iTrain. 
+The sketch does only provide a static display, there is no realtime clock function included. </br>
+This is to support the time scaling function from iTrain. </br>
 To get the display synchronized with iTrain and the clock hands moving this action is recomended:
 ![image](https://user-images.githubusercontent.com/10500682/143782704-4e0a0537-3001-4f7e-9f89-4edbaf517cba.png)
 ***
 #### Platform Display:
-Parameter accepted by the setPlatformDisplay.ps1 Script:
-The script accepts four subsequent parameters. Parameters need to be separated by a space. 
+Parameter accepted by the setPlatformDisplay.ps1 Script: </br>
+The script accepts four subsequent parameters. All parameters need to be separated by a space. 
 * Parameter1 First line. Train name
 * Parameter2 second line eg. first destination
 * Parameter3 third line eg. second destination
