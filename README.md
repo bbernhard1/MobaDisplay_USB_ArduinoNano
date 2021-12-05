@@ -23,7 +23,7 @@ To get the display synchronized with iTrain and the clock hands moving this acti
 ***
 #### Platform Display:
 Parameter accepted by the setPlatformDisplay.ps1 Script:
-The script accepts four subsequent parameters, parameters are separated by space 
+The script accepts four subsequent parameters. Parameters need to be separated by a space. 
 * Parameter1 First line. Train name
 * Parameter2 second line eg. first destination
 * Parameter3 third line eg. second destination
@@ -40,7 +40,10 @@ The hardware is pretty simple. My prototype use a ARDUINO Micro, but for sure it
 The next version will use a ESP8266 NodeMCU board to support Wifi connection. The display are cheap OLED display with I2C interface. 
 Wireing is straight forward, yust connect the SCL and SDA with any digital I/O Pin and configure the settings.h accordingly.
 
+
 **The project is VSCode project with PlatformIO pluggin.**
 
+
+![image](https://user-images.githubusercontent.com/10500682/144753805-d6ae1f81-f1c7-48d2-8a89-039faec08f1a.png)
 
 
