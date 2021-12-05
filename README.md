@@ -9,7 +9,7 @@ Here is an sampel how the result look like. - Ideas for a nice 3D printed housin
 ![PlatformDisplay](https://user-images.githubusercontent.com/10500682/143893848-ba484191-0319-47d4-91c9-c8e92d3ffb47.jpg)
 
 The interface to iTrain is done with powershell scripts which are called from iTrain actions. </br>
-They can be found in the ./script subfolder.
+##### Some sample scripts an be found in the ./script subfolder of this Github project.
 ***
 #### Platform Clock:
 Parameters accepted by the setClockDisplay.ps1 Script:
