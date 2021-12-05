@@ -1,13 +1,14 @@
 ## This Arduino Project is to be used with iTrain Model Railroud control software. 
 #### It can drive a model Platform-Clock and/or Platform-Train-Departure-Display.
-Previously both display where available as dedicated projects, now both had been combined in one universal code.
-The connection to the host is via USB COM port. A re implementatin of the telnet link which is known from previous project is in work.
-At the moment the code is configured to drive both display type at the same time. It is already prepared to to support two or more displays of same type. This will added at a later state.
-This is how the result look like. - Ideas for a nice 3D printed housing are welcome - 
+Previously both display where available as dedicated projects, now both had been combined in one universal code. </br>
+The connection to the host is via USB COM port. </br> A re implementatin of the telnet link which is known from previous project is in work.
+At the moment the code is configured to drive both display type at the same time. It is already prepared to to support two or more displays of same type. </br> 
+This will added at a later state.
+Here is an sampel how the result look like. - Ideas for a nice 3D printed housing are welcome - 
 
 ![PlatformDisplay](https://user-images.githubusercontent.com/10500682/143893848-ba484191-0319-47d4-91c9-c8e92d3ffb47.jpg)
 
-The interface to iTrain is done with powershell scripts which are called from iTrain actions. 
+The interface to iTrain is done with powershell scripts which are called from iTrain actions. </br>
 They can be found in the ./script subfolder.
 ***
 #### Platform Clock:
